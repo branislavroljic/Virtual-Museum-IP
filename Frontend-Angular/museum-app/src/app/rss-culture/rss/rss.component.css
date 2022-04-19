@@ -1,0 +1,12 @@
+.example-card {
+    max-width: 400px;
+}
+
+.news-list{
+      width: 100%;
+  }
+
+  .news-div{
+      display: flex;
+      flex-direction: column;
+  }

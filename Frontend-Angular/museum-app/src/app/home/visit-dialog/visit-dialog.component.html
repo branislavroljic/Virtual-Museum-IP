@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Virtual visit</h1>
+<form [formGroup]="form">
+    <div mat-dialog-content class="create-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="date" required />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <!-- <input placeholder="Date" type="date" formControlName="date" required/> -->
+
+        <mat-form-field>
+            <input matInput placeholder="Time" type="time" required formControlName="startTime" autocomplete="off"
+                required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Duration(min)" type="number" min="10" formControlName="duration" autocomplete="off"
+                required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Price" type="number" min="1" step="any" formControlName="price"
+                autocomplete="off" required />
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+
+        <div style="padding-bottom: 10px; padding-top: 10px;">
+            <mat-label class="file-label">Upload 5-10 images</mat-label>
+            <input placeholder="Images" type="file" (change)="selectFiles($event)" formControlName="images"
+                multiple="multiple" accept="image/*" required />
+            <mat-error>{{error}}</mat-error>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <mat-label class="file-label" style="padding-bottom: 10px; padding-top: 10px;">Upload .mp4 video</mat-label>
+        <input placeholder=".mp4 video" type="file" (change)="selectMP4Video($event)" formControlName="mp4Video"
+            accept="video/mp4" />
+
+        <mat-label class="file-label" style="padding-top: 10px;">or YouTube link</mat-label>
+        <mat-form-field *ngIf="!selectedMP4Video">
+            <input matInput placeholder="YT video link" type="text" formControlName="ytVideo" autocomplete="off"
+                required />
+        </mat-form-field>
+
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="close()">Cancel</button>
+        <button mat-button type="submit" [disabled]="form.invalid" (click)="addVisit()">Add</button>
+    </div>
+</form>

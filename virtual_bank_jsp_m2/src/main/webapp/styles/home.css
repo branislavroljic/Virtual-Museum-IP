@@ -1,0 +1,33 @@
+.content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon { font-size: 80px; }
+
+/*.content-box {*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.left-box {*/
+/*    float: left;*/
+/*    width: calc(40% - 30px);*/
+/*}*/
+
+/*.right-box {*/
+/*    float: right;*/
+/*    width: calc(60% - 30px);*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+.mdl-card__actions {text-align:center;}
+.mdl-card__title h4 {
+    padding-left: 20px;
+    color: red;
+    font-weight: bold;
+}

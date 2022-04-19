@@ -1,0 +1,13 @@
+.mdl-navigation__link {
+    display: flex !important;
+    align-items: flex-start;
+}
+.mdl-navigation__link .material-icons {
+    font-size: 24px;
+    color: black;
+    margin-right: 32px;
+}
+
+.nav-div{
+    display: flex;
+}

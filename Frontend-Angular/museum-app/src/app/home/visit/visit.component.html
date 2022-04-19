@@ -1,0 +1,22 @@
+
+<ng-container *ngIf="artifacts">
+    <div *ngFor="let artifact of artifacts">
+        <div>
+            <div class="centered-div">
+                <img *ngIf="artifact.type == 'image'" [src]="artifact.bytes" width="350px" />
+                <video *ngIf="artifact.type == 'mp4'" controls autoplay [src]="artifact.bytes" width="350px">
+                </video>
+                <youtube-player *ngIf="artifact.type == 'ytvideo'" [videoId]=artifact.uri suggestedQuality="highres"
+                    [height]="600" [width]="1080">
+                </youtube-player>
+            </div>
+            <hr />
+            <div class="centered-div">
+                <p>{{artifact.name}}</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<div class="centered-div">
+    <button mat-button (click)="endVisitClick()" style="width: 80%;">End visit</button>
+</div>

@@ -1,0 +1,7 @@
+.file-label{
+    display: flex;
+    justify-content: center;
+    color: #3F51B5;
+    font-size: 12px;
+    font-style: italic;
+}

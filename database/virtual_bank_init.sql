@@ -1,0 +1,3 @@
+insert into bank_account(name, surname, card_number, card_type, expiration_date, pin, balance, blocked) values ('admin', 'admin', '123', 'VISA', '2022-04-25', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c' , 500.0 , 0),
+('user', 'user', '456', 'VISA', '2022-04-25', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c' , 500.0 , 0);
+-- PIN is '1111' hashed with sha256 

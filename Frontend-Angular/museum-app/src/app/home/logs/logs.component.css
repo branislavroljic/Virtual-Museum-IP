@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+td {
+   word-wrap: break-word;
+    white-space:normal;
+}
+/* mat-header-cell {
+    display:flex;
+    justify-content:flex-end;
+} */
+
+.download-button{
+    position: sticky;
+    bottom: 20px;
+    left: 90%;
+}
+
+.content-div{
+    overflow-y: auto;
+}
+
+.mat-column-message {
+    width: 50%;
+}

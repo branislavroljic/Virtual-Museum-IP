@@ -1,0 +1,40 @@
+<div class="main-div">
+    <mat-toolbar color="primary" class="app-header">
+        <button mat-icon-button #btnSideNavToggle (click)="sideNav.toggle()" fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>VIRTUAL MUSEUM</span>
+    </mat-toolbar>
+    <mat-sidenav-container class="app-sidenav">
+        <mat-sidenav #sideNav align="start" [mode]=navMode opened="true" class="mat-elevation-z1 sidenav"
+            fixedInViewport="false">
+            <mat-nav-list>
+                <mat-accordion>
+                    <a *ngIf="user?.role === 'ADMIN'" mat-list-item [routerLink]="" (click)="adminAppClick()">
+                        <mat-icon mat-list-icon>admin_panel_settings</mat-icon><span mat-line>Admin app</span>
+                    </a>
+                    <mat-divider *ngIf="user?.role === 'ADMIN'"></mat-divider>
+                    <a *ngIf="user?.role === 'ADMIN'" mat-list-item routerLink="chart">
+                        <mat-icon mat-list-icon>assessment</mat-icon><span mat-line>Statistics</span>
+                    </a>
+                    <a mat-list-item routerLink="/">
+                        <mat-icon mat-list-icon>museum</mat-icon><span mat-line>Museums</span>
+                    </a>
+                    <a mat-list-item routerLink="logs" *ngIf="user?.role === 'ADMIN'">
+                        <mat-icon mat-list-icon>assignment</mat-icon><span mat-line>Logs</span>
+                    </a>
+                    <a mat-list-item [routerLink]="" (click)="logoutClick()">
+                        <mat-icon mat-list-icon>exit_to_app</mat-icon><span mat-line>Log out</span>
+                    </a>
+                </mat-accordion>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content">
+
+                <router-outlet>
+                </router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

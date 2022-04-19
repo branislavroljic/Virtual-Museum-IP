@@ -1,0 +1,21 @@
+<mat-card class="example-card" *ngFor="let item of obs | async">
+    <mat-card-title-group>
+        <mat-card-title>{{item.title}}</mat-card-title>
+        <mat-card-subtitle>
+            <p>{{item.pubDate}}</p>
+            <p *ngIf="item.author">{{item.author}}</p>
+        </mat-card-subtitle>
+        <img *ngIf="item.enclosure.link" mat-card-md-image src="{{item.enclosure.link}}">
+    </mat-card-title-group>
+    <mat-card-content>
+        {{item.content}}
+        <ul *ngFor="let c of item.categories">
+            <li>{{c}}</li>
+        </ul>
+    </mat-card-content>
+    <mat-card-actions>
+        <p><a [attr.href]='item.link' target='_blank'>Read more..</a></p>
+      </mat-card-actions>
+</mat-card>
+
+<mat-paginator [pageSizeOptions]="[1]"></mat-paginator>

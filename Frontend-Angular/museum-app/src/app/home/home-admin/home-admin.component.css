@@ -1,0 +1,21 @@
+.statistics-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 50px;
+    background-color: #68c8c3;
+}
+
+.info-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.static-span{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 10px;
+}

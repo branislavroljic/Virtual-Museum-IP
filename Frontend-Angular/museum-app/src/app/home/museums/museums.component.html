@@ -1,0 +1,99 @@
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<mat-toolbar class="options-menu">
+    <h3>Museums</h3>
+    <button *ngIf="user?.role === 'ADMIN'" mat-icon-button (click)="addMuseum()" class="right-button">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="content-div">
+<div class="mat-elevation-z8 table-div">
+    <table mat-table [dataSource]="dataSource" matSort style="display: inline-table;" >
+
+        <ng-container *ngIf="user?.role === 'ADMIN'" matColumnDef="edit">
+            <tr>
+              <th mat-header-cell *matHeaderCellDef> Edit </th>
+            </tr>
+            <tr>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" (click)="editMuseum($event, element)" title="Edit Museum">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            <tr>
+          </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+            <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+            <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+            <td mat-cell *matCellDef="let row"> {{row.city}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+            <td mat-cell *matCellDef="let row"> {{row.country}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tel">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+            <td mat-cell *matCellDef="let row"> {{row.tel}} </td>
+        </ng-container>
+
+        <ng-container *ngIf="user?.role === 'ADMIN'" matColumnDef="delete">
+            <tr>
+              <th mat-header-cell *matHeaderCellDef> Delete </th>
+            </tr>
+            <tr>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" (click)="deleteMuseum($event, element)" title="Delete Museum">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            <tr>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="museumClick(row)"
+        *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+       
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10]" aria-label="Select page of users"></mat-paginator>
+</div>
+
+<div class="news-div">
+  <mat-card class="news-card">
+    <mat-card-header>
+      <mat-card-title>
+        News
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+      <app-rss></app-rss>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>

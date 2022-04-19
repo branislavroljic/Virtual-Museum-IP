@@ -1,0 +1,54 @@
+/* mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+mat-sidenav {
+    width: 250px;
+}
+.content {
+    padding: 10px;
+    position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+.body-div{
+	overflow-y: hidden;
+} */
+
+.main-div {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+}
+
+.app-header {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+.app-sidenav {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+.content {
+	padding: 20px;
+	/* position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto; */
+}
+
+
+
+/* .toolbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+} */

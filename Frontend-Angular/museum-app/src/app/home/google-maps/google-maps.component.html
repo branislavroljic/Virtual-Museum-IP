@@ -1,0 +1,14 @@
+<google-map [zoom]="10" [options]="options" width="100%" height="90%" [center]="cityLatLng" (mapClick)="click($event)">
+    <map-marker #markerElem *ngIf="marker" [position]="marker.position" [title]="marker.title"
+        [options]="marker.options">
+
+    </map-marker>
+
+    <map-info-window>{{infoContent}}</map-info-window>
+</google-map>
+<div *ngIf="!readonlyMap" class="button-div">
+    <button mat-button (click)="save()">Save</button>
+</div>
+<div *ngIf="readonlyMap" class="button-div">
+    <button mat-button (click)="close()">Close</button>
+</div>

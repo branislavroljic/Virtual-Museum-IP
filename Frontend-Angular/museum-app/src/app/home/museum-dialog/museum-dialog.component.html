@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>Museum</h1>
+<form [formGroup]="form">
+    <div mat-dialog-content class="create-form">
+        <mat-form-field>
+            <input matInput placeholder="Name" required formControlName="name" autocomplete="off" autofocus/>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Address" required formControlName="address" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Phone" formControlName="tel" autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Type" formControlName="type" autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country" required>
+                <mat-option (onSelectionChange)="countryChange($event)" *ngFor="let contry of restCountries" [value]="contry.cca2">
+                    {{contry.name}}
+                </mat-option>
+                <!-- <mat-option value="BiH">
+                    BiH
+                </mat-option> -->
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city" required>
+                <mat-option *ngFor="let city of cities " [value]="city.city">
+                    {{city.city}}
+                </mat-option>
+                <!-- <mat-option value="Banjaluka">
+                    Banja Luka
+                </mat-option> -->
+            </mat-select>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+        <div style="text-align: center;">GEO LOCATION</div>
+        <mat-form-field>
+            <input matInput placeholder="Geolat" formControlName="geolat" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Geolng" formControlName="geolng" required/>
+        </mat-form-field>
+        <div style="text-align: center;">OR</div>
+
+      <div style="text-align: center; padding-bottom: 5px;">  <button mat-raised-button color="primary" (click)="openMapClick()">Find on map</button></div> 
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="close()">Cancel</button>
+        <button *ngIf="museum != null" mat-button type="submit" [disabled]="form.invalid" (click)="editMuseum(form.value)">Edit</button>
+        <button *ngIf="museum == null" mat-button type="submit" [disabled]="form.invalid" (click)="addMuseum(form.value)">Add</button>
+    </div>
+</form>

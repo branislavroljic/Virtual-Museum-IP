@@ -1,0 +1,93 @@
+.weather-card,
+.news-card {
+  color: white;
+  background-color: rgb(47, 95, 161);
+  box-sizing: border-box;
+  min-width: 30%;
+}
+
+
+.right-button {
+  position: absolute;
+  right: 20px;
+}
+
+.news-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 800px) {
+  .news-div {
+    position: sticky;
+    /* top: 400px; */
+    bottom: -250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+.tab-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mat-header-cell {
+  padding: 0px 8px 8px 0;
+}
+
+table {
+  width: 100%;
+}
+
+.content-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.tab{
+  width: 100%;
+}
+
+
+.error-label{
+  font-size: 14px;
+  color: red;
+}
+
+.mat-column-action {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.mat-column-delete {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}

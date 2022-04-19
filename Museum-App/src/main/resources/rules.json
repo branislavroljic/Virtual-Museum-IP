@@ -1,0 +1,162 @@
+{
+  "rules": [
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/auth/token",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/logs",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/logs/download",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/statistics/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/statistics/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "pattern": "/api/virtual_bank",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/visits",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
+    {
+      "methods": [
+        "DELETE"
+      ],
+      "pattern": "/api/visits/*",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET", "POST"
+      ],
+      "pattern": "/api/visits/**",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/statistics/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "POST",
+        "PUT"
+      ],
+      "pattern": "/api/museums",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "DELETE", "PUT"
+      ],
+      "pattern": "/api/museums/*",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/museums",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/museums/*",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "pattern": "/api/museums/**/visits",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "pattern": "/api/museums/**/visits",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "pattern": "/api/museums/**/visits/**",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+.register-container {    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+   min-width: 25%;
+}
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+.register-button{
+    width: 100%;
+}
+.login-link{
+    text-decoration: none;
+}
+.additional-link{
+    text-align: center;
+}
+.error-div{
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+}

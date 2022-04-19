@@ -1,0 +1,29 @@
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+td {
+    word-wrap: break-word;
+    white-space:normal;
+}
+
+.content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.reload-transactions{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.table-div{
+    height: 90%;
+}
+.reload-div{
+   height: 10%;
+    display: flex;
+}
